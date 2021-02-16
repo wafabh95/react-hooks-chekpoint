@@ -12,7 +12,42 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+img{
+  width:6px;height:200px;
+}
+.card-img-top{
+  width: 25% !important;
+}
 
+.modal-title{
+  color:black;
+  text-align: center !important;
+ 
+}
+.card-img-top {
+  width: 100% !important;
+}
+.card-deck .card 
+{
+width:250px;
+min-width: 250px;
+margin-top:15px
+}
+.card-text {
+  font-size:12px;
+}
+
+.add{
+  margin-top:20px;
+}
+.card-body{
+  color : black
+}
+.title {
+  color : black
+}
+.description {color : black}
+.posteUrl{color : black}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
