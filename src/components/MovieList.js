@@ -32,8 +32,8 @@ return (
 
 
 <CardDeck>
- { props.movies.filter( (el) => (el.title.toLowerCase().includes(search.toLowerCase())) && (el.rate.includes(raiting)) ).map((el) => 
-       <Card key={el.key}>
+ { props.movies.filter( (el) => (el.title.toLowerCase().includes(search.toLowerCase()))&& ((el.rate)>=(raiting))) .map((el) => 
+       <Card Card key={el.id}>
           <Card.Img variant="top"  className="img" src={el.posterUrl}/>
           <Card.Body className="card-body">
             <Card.Title>{el.title}</Card.Title>
@@ -45,6 +45,7 @@ return (
         </Card>
     )}
 </CardDeck>
+
 </>
 )
 }

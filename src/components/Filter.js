@@ -19,8 +19,11 @@ function Filter(props){
         setRaiting(nextValue);
         props.raiting(nextValue); 
       };
-
-
+const onStarHover = (nextValue, prevValue, name)=>{
+  setRaiting(nextValue);
+  props.raiting(nextValue); 
+}
+      
       
   return(
   <>
@@ -35,7 +38,7 @@ function Filter(props){
   
 </Form>
 
-  <StarRatingComponent value={raiting} starCount={5}  name="rate1" onStarClick={onStarClick}/>
+  <StarRatingComponent value={raiting} starCount={5}  name="rate1" onStarClick={onStarClick} onStarHover={onStarHover}/>
   
   </>
     );
