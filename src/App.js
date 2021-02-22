@@ -6,11 +6,11 @@ import ListMovies from './components/MovieList'
 import Filter from './components/Filter'
 import Description from "./components/Description";
 import { useState } from "react"
-
+import {BrowserRouter,Route} from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
 const App = ()=>{
-  const [movies, setMovies] = useState([
+  const [movies , setMovies] = useState([
     {
     id : uuidv4(),
     title: "Christimas",
@@ -38,10 +38,13 @@ const addMovie = (newMovie)=>{
   }
   
   return (
+    <BrowserRouter>
   <div className="App-header">
    <ListMovies movies= {movies }/>
    <Add addMovie = {(newMovie)=>addMovie(newMovie)}/>
   </div>
+     <Route path="/movie/:id" render={(props) => <Description {...props} movies={movies} />}/> 
+  </BrowserRouter>
   );
 
 }

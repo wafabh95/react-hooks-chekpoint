@@ -8,6 +8,8 @@ import Filter from './Filter'
 import Add from './ModalInput';
 import { useState } from "react"
 import StarRatingComponent from 'react-star-rating-component';
+import { Link, Route, Switch } from 'react-router-dom';
+
 
 function ListMovies(props){
 //hooks use state
@@ -35,15 +37,18 @@ return (
  { props.movies.filter( (el) => (el.title.toLowerCase().includes(search.toLowerCase()))&& ((el.rate)>=(raiting))) .map((el) => 
        <Card Card key={el.id}>
           <Card.Img variant="top"  className="img" src={el.posterUrl}/>
+         
           <Card.Body className="card-body">
             <Card.Title>{el.title}</Card.Title>
-            <Card.Text>
+            <Link to ={`/movie/${el.id}` } >Description</Link>
+            {/* <Card.Text>
             {el.description}
             </Card.Text>
-            <StarRatingComponent value={el.rate} starCount={5}  name="rate1" />
+            <StarRatingComponent value={el.rate} starCount={5}  name="rate1" /> */}
           </Card.Body>
         </Card>
     )}
+      
 </CardDeck>
 
 </>
